@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Matemática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz de Matemática</h1>
+        <div id="question-container">
+            <p id="question">Qual é 5 + 3?</p>
+            <button class="answer" onclick="checkAnswer(8)">8</button>
+            <button class="answer" onclick="checkAnswer(6)">6</button>
+            <button class="answer" onclick="checkAnswer(7)">7</button>
+            <button class="answer" onclick="checkAnswer(9)">9</button>
+
+            <p id="question"> Qual é a fórmula para calcular a área de um triângulo?</p>
+            <button class="answer" onclick="checkAnswer(a)">8</button>
+            <button class="answer" onclick="checkAnswer(b)">6</button>
+            <button class="answer" onclick="checkAnswer(c)">7</button>
+            <button class="answer" onclick="checkAnswer(d)">9</button>
+        </div>
+        <div id="explanation" class="explanation"></div>
+        <button id="next-button" class="next-button" onclick="nextQuestion()">Próxima Pergunta</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
