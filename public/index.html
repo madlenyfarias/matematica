@@ -1,31 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Matemática</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>História da Matemática e Matemáticos Famosos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f5f7;
+      color: #333;
+    }
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section.intro {
+      margin-bottom: 40px;
+    }
+    section.intro h2 {
+      color: #004aad;
+    }
+    section.intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    section.mathematicians h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+    article.math-person {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    article.math-person:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    article.math-person img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #004aad;
+      flex-shrink: 0;
+    }
+    article.math-person h3 {
+      margin-top: 0;
+      color: #002d72;
+    }
+    article.math-person p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .text-content {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Quiz de Matemática</h1>
-        <div id="question-container">
-            <p id="question">Qual é 5 + 3?</p>
-            <button class="answer" onclick="checkAnswer(8)">8</button>
-            <button class="answer" onclick="checkAnswer(6)">6</button>
-            <button class="answer" onclick="checkAnswer(7)">7</button>
-            <button class="answer" onclick="checkAnswer(9)">9</button>
+  <header>
+    <h1>História da Matemática</h1>
+  </header>
 
-            <p id="question"> Qual é a fórmula para calcular a área de um triângulo?</p>
-            <button class="answer" onclick="checkAnswer(a)">8</button>
-            <button class="answer" onclick="checkAnswer(b)">6</button>
-            <button class="answer" onclick="checkAnswer(c)">7</button>
-            <button class="answer" onclick="checkAnswer(d)">9</button>
+  <main>
+    <section class="intro">
+      <h2>Introdução</h2>
+      <p>
+        A matemática é uma ciência fundamental que tem sido desenvolvida ao longo de milênios. Ela é essencial para o entendimento do universo, da lógica e da tecnologia que usamos no dia a dia. Diversos matemáticos, em diferentes épocas, contribuíram de forma decisiva para o avanço dessa área do conhecimento.
+      </p>
+    </section>
+
+    <section class="mathematicians">
+      <h2>Matemáticos Famosos e Suas Contribuições</h2>
+
+      <article class="math-person">
+        <img src="https://www.worldhistory.org/img/c/p/1200x627/4139.jpg" alt="Euclides" />
+        <div class="text-content">
+          <h3>Euclides (c. 300 a.C.)</h3>
+          <p>
+            Conhecido como o "Pai da Geometria", Euclides escreveu o livro "Os Elementos", que sistematizou o conhecimento geométrico da época e serviu de base para o ensino da matemática por mais de dois mil anos.
+          </p>
         </div>
-        <div id="explanation" class="explanation"></div>
-        <button id="next-button" class="next-button" onclick="nextQuestion()">Próxima Pergunta</button>
-    </div>
+      </article>
 
-    <script src="script.js"></script>
+      <article class="math-person">
+        <img src="https://th.bing.com/th/id/OIP.sCbTXNn4aRJFHL-LVFnLhQAAAA?rs=1&pid=ImgDetMain" alt="Isaac Newton" />
+        <div class="text-content">
+          <h3>Isaac Newton (1643–1727)</h3>
+          <p>
+            Newton foi um dos maiores cientistas de todos os tempos. Além de formular as leis do movimento e da gravidade, ele fez grandes contribuições para o cálculo matemático, ao lado de Leibniz.
+          </p>
+        </div>
+      </article>
+
+      <article class="math-person">
+        <img src="https://static.wixstatic.com/media/df208b_800adde4ef9a41c1814af91e83ad8208~mv2.jpg/v1/fill/w_960,h_1185,al_c,q_85,enc_avif,quality_auto/df208b_800adde4ef9a41c1814af91e83ad8208~mv2.jpg" alt="Gottfried Wilhelm Leibniz" />
+        <div class="text-content">
+          <h3>Gottfried Wilhelm Leibniz (1646–1716)</h3>
+          <p>
+            Leibniz desenvolveu o cálculo diferencial e integral independentemente de Newton. Ele também contribuiu para a lógica matemática e a filosofia.
+          </p>
+        </div>
+      </article>
+
+      <article class="math-person">
+        <img src="https://th.bing.com/th/id/R.7f22ff9911663107837229bf5529b1e6?rik=HkVkQIU0TGU9eg&pid=ImgRaw&r=0" alt="Carl Friedrich Gauss" />
+        <div class="text-content">
+          <h3>Carl Friedrich Gauss (1777–1855)</h3>
+          <p>
+            Conhecido como "Príncipe dos Matemáticos", Gauss fez avanços em teoria dos números, estatística, análise matemática, geometria diferencial e muito mais.
+          </p>
+        </div>
+      </article>
+
+      <article class="math-person">
+        <img src="https://th.bing.com/th/id/R.6548f5423a56431640eb4462102fffe7?rik=VVMcUXhpZs4MDA&riu=http%3a%2f%2fwww.thefamouspeople.com%2fprofiles%2fimages%2fvariste-galois-2.jpg&ehk=WzqtbxpeRhxUOqFGYjPKTfN6yO6ChptD3UY%2f14Mq9uo%3d&risl=&pid=ImgRaw&r=0" alt="Évariste Galois" />
+        <div class="text-content">
+          <h3>Évariste Galois (1811–1832)</h3>
+          <p>
+            Galois é famoso por ter fundado a teoria dos grupos e ter contribuído para a solução dos problemas de equações algébricas.
+          </p>
+        </div>
+      </article>
+
+      <article class="math-person">
+        <img src="https://th.bing.com/th/id/R.67431a24fd675d6af043894b4bfa303f?rik=6udONGiLtysXRA&riu=http%3a%2f%2fwww.historyanswers.co.uk%2fwp-content%2fuploads%2f2015%2f10%2fAda_Lovelace_portrait.jpg&ehk=Gaw3k0dHgmFqgtYcQL2nzlO2DveeVV%2fh5JY7YyDwBYc%3d&risl=&pid=ImgRaw&r=0" alt="Ada Lovelace" />
+        <div class="text-content">
+          <h3>Ada Lovelace (1815–1852)</h3>
+          <p>
+            Considerada a primeira programadora da história, Ada trabalhou com Charles Babbage e escreveu o primeiro algoritmo para uma máquina de calcular mecânica.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Página de História da Matemática
+  </footer>
 </body>
 </html>
