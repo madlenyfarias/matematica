@@ -1,44 +1,81 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
 
-.quiz-container {
-    background-color: rgb(250, 254, 252);
-    padding: 80px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
-
-button {
-    background-color: #148414;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 8px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.next-button {
-    background-color: #0f85ac;
-    display: none;
-}
-
-.explanation {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f5f7;
+      color: #333;
+    }
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section.intro {
+      margin-bottom: 40px;
+    }
+    section.intro h2 {
+      color: #004aad;
+    }
+    section.intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    section.mathematicians h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+    article.math-person {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    article.math-person:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    article.math-person img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #004aad;
+      flex-shrink: 0;
+    }
+    article.math-person h3 {
+      margin-top: 0;
+      color: #002d72;
+    }
+    article.math-person p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .text-content {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  
