@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Quiz com Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       background: #f8f9fa;
-       display: flex;
-      justify-content: center; /* centraliza horizontalmente */
-      align-items: center;     /* centraliza verticalmente */
-      text-align: center;      /* centraliza o texto dentro do container */
-      height: 100vh;           /* ocupa 100% da altura da viewport */
       font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 0; /* REMOVER margens que impedem largura total */
+      padding: 0;
       box-sizing: border-box;
     }
+
+    .quiz-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 56px); /* 56px = altura da navbar padrão */
+      padding: 20px;
+    }
+
     .quiz-card {
       max-width: 600px;
-      margin: 50px auto;
+      width: 100%;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: white;
+      text-align: center;
     }
+
     .quiz-title {
       font-weight: 600;
-      text-align: center;
       color: #343a40;
       margin-bottom: 30px;
     }
+
     .btn-submit {
       display: block;
       margin: 20px auto 0 auto;
       width: 100%;
     }
+
     #result {
       font-size: 1.2rem;
     }
@@ -41,7 +52,8 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- ✅ NAVBAR DE LARGURA TOTAL -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Matemática</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -51,99 +63,82 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Início</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Quizes</a>
+            <a class="nav-link" href="quizes.html">Quiz</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Conteúdo</a>
+            <a class="nav-link" href="conteudo.html">Conteúdo</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-<div class="container">
-  <div class="bg-white quiz-card">
-    <h2 class="quiz-title">🧠 Quiz de Matemática</h2>
+  <!-- QUIZ -->
+  <div class="container quiz-wrapper">
+    <div class="quiz-card">
+      <h2 class="quiz-title">🧠 Quiz de Matemática</h2>
 
-    <form id="quizForm">
-      <!-- Pergunta 1 -->
-      <div class="mb-4">
-        <label class="form-label">1. Quanto é 5 + 3?</label>
-        <select class="form-select" name="q1" required>
-          <option value="">Escolha uma resposta</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </div>
+      <form id="quizForm">
+        <div class="mb-4">
+          <label class="form-label">1. Quanto é 5 + 3?</label>
+          <select class="form-select" name="q1" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </div>
 
-      <!-- Pergunta 2 -->
-      <div class="mb-4">
-        <label class="form-label">2. Quanto é 9 × 2?</label>
-        <select class="form-select" name="q2" required>
-          <option value="">Escolha uma resposta</option>
-          <option value="18">18</option>
-          <option value="16">16</option>
-          <option value="20">20</option>
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="form-label">2. Quanto é 9 × 2?</label>
+          <select class="form-select" name="q2" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="18">18</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+          </select>
+        </div>
 
-      <!-- Pergunta 3 -->
-      <div class="mb-4">
-        <label class="form-label">3. Quanto é 12 ÷ 4?</label>
-        <select class="form-select" name="q3" required>
-          <option value="">Escolha uma resposta</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="form-label">3. Quanto é 12 ÷ 4?</label>
+          <select class="form-select" name="q3" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
 
-      <button type="submit" class="btn btn-primary btn-submit">Enviar Respostas</button>
-    </form>
+        <button type="submit" class="btn btn-primary btn-submit">Enviar Respostas</button>
+      </form>
 
-    <div id="result" class="mt-4 alert d-none text-center"></div>
+      <div id="result" class="mt-4 alert d-none text-center"></div>
+    </div>
   </div>
-</div>
 
-<!-- Bootstrap Bundle JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const answers = { q1: '8', q2: '18', q3: '3' };
+      let score = 0;
+      const form = e.target;
 
-<script>
-  document.getElementById('quizForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const answers = {
-      q1: '8',
-      q2: '18',
-      q3: '3'
-    };
-
-    let score = 0;
-    const form = e.target;
-
-    for (const [key, value] of Object.entries(answers)) {
-      const userAnswer = form.elements[key].value;
-      if (userAnswer === value) {
-        score++;
+      for (const [key, value] of Object.entries(answers)) {
+        const userAnswer = form.elements[key].value;
+        if (userAnswer === value) score++;
       }
-    }
 
-    const result = document.getElementById('result');
-    result.classList.remove('d-none', 'alert-success', 'alert-danger');
-
-    if (score === 3) {
-      result.classList.add('alert-success');
-      result.innerHTML = `✅ Parabéns! Você acertou <strong>${score}</strong> de 3 perguntas!`;
-    } else {
-      result.classList.add('alert-danger');
-      result.innerHTML = `❌ Você acertou <strong>${score}</strong> de 3. Tente novamente!`;
-    }
-  });
-</script>
-
+      const result = document.getElementById('result');
+      result.classList.remove('d-none', 'alert-success', 'alert-danger');
+      result.classList.add(score === 3 ? 'alert-success' : 'alert-danger');
+      result.innerHTML = score === 3
+        ? `✅ Parabéns! Você acertou <strong>${score}</strong> de 3 perguntas!`
+        : `❌ Você acertou <strong>${score}</strong> de 3. Tente novamente!`;
+    });
+  </script>
 </body>
 </html>
