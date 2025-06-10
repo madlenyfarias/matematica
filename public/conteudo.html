@@ -1,24 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matemática - Página de Conteúdo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f5f7;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav.navbar {
+      background-color: #004aad;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link {
+      color: white;
+    }
+    nav.navbar .nav-link.active,
+    nav.navbar .nav-link:hover {
+      color: #ffd54f; /* amarelo claro para destaque */
+    }
+
+    /* Container principal */
+    main.container {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      padding: 0 20px;
+    }
+
+    /* Títulos das seções */
+    h1, h2 {
+      color: #004aad;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      border-bottom: 3px solid #004aad;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Seções com fade-in */
+    section.fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      margin-bottom: 3rem;
+    }
+    section.fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Texto das seções */
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    section ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    section ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Imagens */
+    .img-fluid {
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Botão voltar ao topo (JS) */
+    #btnTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    #btnTop:hover {
+      background-color: #002d72;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Barra de Navegação -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Matemática</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Início</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="quizes.html">Quiz</a>
@@ -30,70 +143,171 @@
       </div>
     </div>
   </nav>
-
+  
   <!-- Conteúdo principal -->
-  <div class="container mt-5">
-    <h1 class="mb-4">Bem-vindo ao Mundo da Matemática</h1>
-
-    <section class="mb-5">
-      <h2>O que é Matemática?</h2>
+  <main class="container">
+    <section id="intro" class="intro fade-in">
+      <h1>Bem-vindo ao Mundo da Matemática</h1>
+      <p>
+        A matemática é a base de diversas áreas do conhecimento e está presente em
+        nosso dia a dia, desde a contagem de objetos até a compreensão do universo.
+        Aqui, você encontrará explicações simples e exemplos práticos para ampliar seu
+        entendimento.
+      </p>
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p>Matemática é a ciência do raciocínio lógico e da análise quantitativa. Ela estuda números, formas, estruturas e suas relações.</p>
+          <p>
+            A matemática é uma ciência que envolve raciocínio lógico, análise quantitativa,
+            abstração e modelagem de situações reais. É uma ferramenta poderosa para
+            resolver problemas e tomar decisões fundamentadas.
+          </p>
         </div>
         <div class="col-md-6">
-          <img src="https://cdn.pixabay.com/photo/2017/03/12/13/41/mathematics-2131190_960_720.jpg" class="img-fluid rounded" alt="Matemática imagem ilustrativa">
+          <img
+            src="https://cdn.pixabay.com/photo/2017/03/12/13/41/mathematics-2131190_960_720.jpg"
+            class="img-fluid rounded"
+            alt="Matemática imagem ilustrativa"
+          />
         </div>
       </div>
     </section>
 
-    <section class="mb-5">
+    <section id="algebra" class="fade-in">
       <h2>Álgebra</h2>
       <div class="row align-items-center">
         <div class="col-md-6 order-md-2">
-          <p>Álgebra é o ramo da matemática que lida com símbolos e as regras para manipular esses símbolos.</p>
+          <p>
+            Álgebra é o ramo da matemática que trabalha com símbolos e regras para manipular expressões e equações.
+            É fundamental para entender padrões e relações entre números.
+          </p>
           <ul>
-            <li>Equações de 1º e 2º grau</li>
-            <li>Expressões algébricas</li>
-            <li>Fatores e produtos notáveis</li>
+            <li>Resolução de equações do 1º e 2º grau</li>
+            <li>Manipulação de expressões algébricas</li>
+            <li>Identificação de fatores e produtos notáveis</li>
+            <li>Introdução às inequações e sistemas</li>
           </ul>
         </div>
         <div class="col-md-6 order-md-1">
-          <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/math-1296945_960_720.png" class="img-fluid rounded" alt="Álgebra imagem">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/03/31/19/56/math-1296945_960_720.png"
+            class="img-fluid rounded"
+            alt="Álgebra imagem"
+          />
         </div>
       </div>
     </section>
 
-    <section class="mb-5">
+    <section id="geometry" class="fade-in">
       <h2>Geometria</h2>
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p>A Geometria estuda as formas, tamanhos, posições relativas das figuras e as propriedades do espaço.</p>
+          <p>
+            A Geometria estuda as formas, tamanhos, posições relativas das figuras e as propriedades do espaço.
+            Com ela, compreendemos melhor o mundo ao nosso redor.
+          </p>
           <ul>
-            <li>Figuras planas (triângulos, quadrados, círculos)</li>
-            <li>Volume e área</li>
-            <li>Ângulos e linhas</li>
+            <li>Figuras planas como triângulos, quadrados e círculos</li>
+            <li>Cálculo de volume e área</li>
+            <li>Relações entre ângulos e linhas</li>
+            <li>Geometria analítica e espacial</li>
           </ul>
         </div>
         <div class="col-md-6">
-          <img src="https://cdn.pixabay.com/photo/2020/04/21/10/48/geometry-5072883_960_720.jpg" class="img-fluid rounded" alt="Geometria imagem">
+          <img
+            src="https://cdn.pixabay.com/photo/2020/04/21/10/48/geometry-5072883_960_720.jpg"
+            class="img-fluid rounded"
+            alt="Geometria imagem"
+          />
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="formulas" class="fade-in">
       <h2>Exemplo de Fórmulas</h2>
       <p><strong>Área do triângulo:</strong> A = (base × altura) / 2</p>
       <p><strong>Fórmula de Bhaskara:</strong> x = (-b ± √(b² - 4ac)) / 2a</p>
+      <p><strong>Teorema de Pitágoras:</strong> a² + b² = c²</p>
+      <p><strong>Circunferência do círculo:</strong> C = 2πr</p>
     </section>
-  </div>
+  </main>
 
   <!-- Rodapé -->
-  <footer class="bg-light text-center py-4 mt-5">
-    <p class="mb-0">© 2025 Página de Matemática | Todos os direitos reservados.</p>
+  <footer>
+    <p>© 2025 Página de Matemática | Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Botão voltar ao topo será criado pelo JS -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll suave ao clicar nos links da navbar
+      const navLinks = document.querySelectorAll('nav a.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          const href = link.getAttribute('href');
+          if(href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if(target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+      // Scrollspy simples - destaca o link ativo conforme a seção visível
+      const sections = document.querySelectorAll('main section');
+      const options = { threshold: 0.5 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const id = entry.target.id;
+          const navLink = document.querySelector(`nav a[href="#${id}"]`);
+          if(entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if(navLink) navLink.classList.add('active');
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        if(section.id) observer.observe(section);
+      });
+
+      // Animação fade-in nas seções quando aparecem na tela
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+      const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+
+      // Botão voltar ao topo
+      const btnTop = document.createElement('button');
+      btnTop.textContent = '↑ Topo';
+      btnTop.id = 'btnTop';
+      document.body.appendChild(btnTop);
+
+      btnTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) {
+          btnTop.style.display = 'block';
+        } else {
+          btnTop.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-

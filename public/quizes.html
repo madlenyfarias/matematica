@@ -2,57 +2,72 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz com Bootstrap</title>
+  <title>Quiz de Matemática</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
     body {
-      background: #f8f9fa;
-      font-family: Arial, sans-serif;
-      margin: 0; /* REMOVER margens que impedem largura total */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #f2f5f7;
+      color: #333;
     }
-
-    .quiz-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: calc(100vh - 56px); /* 56px = altura da navbar padrão */
-      padding: 20px;
-    }
-
-    .quiz-card {
-      max-width: 600px;
-      width: 100%;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      background: white;
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px 10px;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .quiz-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
     .quiz-title {
       font-weight: 600;
-      color: #343a40;
+      color: #004aad;
       margin-bottom: 30px;
+      text-align: center;
     }
-
+    .form-label {
+      font-weight: 500;
+      color: #002d72;
+    }
     .btn-submit {
       display: block;
-      margin: 20px auto 0 auto;
+      margin: 30px auto 10px auto;
       width: 100%;
+      font-weight: 600;
     }
-
     #result {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-
-  <!-- ✅ NAVBAR DE LARGURA TOTAL -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Matemática</a>
@@ -76,69 +91,170 @@
     </div>
   </nav>
 
-  <!-- QUIZ -->
-  <div class="container quiz-wrapper">
-    <div class="quiz-card">
-      <h2 class="quiz-title">🧠 Quiz de Matemática</h2>
+  
+  <header>
+    <h1>Quiz de Matemática</h1>
+  </header>
 
-      <form id="quizForm">
+  
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quizes.html">Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="conteudo.html">Conteúdo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="quiz-card">
+      <h2 class="quiz-title">🧠 Teste seus conhecimentos matemáticos!</h2>
+      <form id="quizForm" novalidate>
+        <!-- Pergunta 1 -->
         <div class="mb-4">
-          <label class="form-label">1. Quanto é 5 + 3?</label>
-          <select class="form-select" name="q1" required>
+          <label class="form-label" for="q1">1. Qual é o resultado de 7 + 6?</label>
+          <select class="form-select" id="q1" name="q1" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="mb-4">
+          <label class="form-label" for="q2">2. Quanto é 15 - 9?</label>
+          <select class="form-select" id="q2" name="q2" required>
             <option value="">Escolha uma resposta</option>
             <option value="6">6</option>
-            <option value="8">8</option>
-            <option value="10">10</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
           </select>
         </div>
 
+        <!-- Pergunta 3 -->
         <div class="mb-4">
-          <label class="form-label">2. Quanto é 9 × 2?</label>
-          <select class="form-select" name="q2" required>
+          <label class="form-label" for="q3">3. Qual é o produto de 4 × 6?</label>
+          <select class="form-select" id="q3" name="q3" required>
             <option value="">Escolha uma resposta</option>
-            <option value="18">18</option>
-            <option value="16">16</option>
             <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="26">26</option>
           </select>
         </div>
 
+        <!-- Pergunta 4 -->
         <div class="mb-4">
-          <label class="form-label">3. Quanto é 12 ÷ 4?</label>
-          <select class="form-select" name="q3" required>
+          <label class="form-label" for="q4">4. Quanto é 36 ÷ 6?</label>
+          <select class="form-select" id="q4" name="q4" required>
             <option value="">Escolha uma resposta</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="mb-4">
+          <label class="form-label" for="q5">5. Qual é o quadrado de 5?</label>
+          <select class="form-select" id="q5" name="q5" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="25">25</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="mb-4">
+          <label class="form-label" for="q6">6. Qual é a raiz quadrada de 81?</label>
+          <select class="form-select" id="q6" name="q6" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div class="mb-4">
+          <label class="form-label" for="q7">7. Qual número é primo?</label>
+          <select class="form-select" id="q7" name="q7" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="9">9</option>
+            <option value="11">11</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div class="mb-4">
+          <label class="form-label" for="q8">8. Qual é a metade de 64?</label>
+          <select class="form-select" id="q8" name="q8" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="34">34</option>
+            <option value="32">32</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 9 -->
+        <div class="mb-4">
+          <label class="form-label" for="q9">9. Quanto é 3² + 4²?</label>
+          <select class="form-select" id="q9" name="q9" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="25">25</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 10 -->
+        <div class="mb-4">
+          <label class="form-label" for="q10">10. Quanto é 10% de 250?</label>
+          <select class="form-select" id="q10" name="q10" required>
+            <option value="">Escolha uma resposta</option>
+            <option value="25">25</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
           </select>
         </div>
 
         <button type="submit" class="btn btn-primary btn-submit">Enviar Respostas</button>
       </form>
 
-      <div id="result" class="mt-4 alert d-none text-center"></div>
+      <div id="result" class="d-none text-center"></div>
     </div>
-  </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Quiz Matemática. Todos os direitos reservados.
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const answers = { q1: '8', q2: '18', q3: '3' };
-      let score = 0;
-      const form = e.target;
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    const correctAnswers = {
+      q1: '13',
+      q2: '6',
+      q3: '24',
+      q4: '6',
+      q5: '25',
+      q6: '9',
+      q7: '11',
+      q8: '32',
+      q9: '25',
+      q10: '25'
+    };
 
-      for (const [key, value] of Object.entries(answers)) {
-        const userAnswer = form.elements[key].value;
-        if (userAnswer === value) score++;
-      }
-
-      const result = document.getElementById('result');
-      result.classList.remove('d-none', 'alert-success', 'alert-danger');
-      result.classList.add(score === 3 ? 'alert-success' : 'alert-danger');
-      result.innerHTML = score === 3
-        ? `✅ Parabéns! Você acertou <strong>${score}</strong> de 3 perguntas!`
-        : `❌ Você acertou <strong>${score}</strong> de 3. Tente novamente!`;
-    });
-  </script>
-</body>
-</html>
+    form.addEventListener('submit', funct
