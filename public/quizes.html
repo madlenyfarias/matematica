@@ -52,7 +52,7 @@
       font-weight: 600;
     }
     #result {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-top: 20px;
       padding: 15px;
       border-radius: 8px;
@@ -68,35 +68,13 @@
   </style>
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Matemática</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="quizes.html">Quiz</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="conteudo.html">Conteúdo</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  
-  <header>
-    <h1>Quiz de Matemática</h1>
-  </header>
-
-  
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -114,11 +92,17 @@
     </div>
   </nav>
 
+  <header>
+    <h1>Quiz de Matemática</h1>
+  </header>
 
   <main>
     <div class="quiz-card">
       <h2 class="quiz-title">🧠 Teste seus conhecimentos matemáticos!</h2>
       <form id="quizForm" novalidate>
+        <!-- Perguntas 1 a 10 -->
+        <!-- ... perguntas idênticas às suas ... (não repito aqui por espaço, já estão corretas no seu código) -->
+
         <!-- Pergunta 1 -->
         <div class="mb-4">
           <label class="form-label" for="q1">1. Qual é o resultado de 7 + 6?</label>
@@ -141,7 +125,7 @@
           </select>
         </div>
 
-        <!-- Pergunta 3 -->
+         <!-- Pergunta 3 -->
         <div class="mb-4">
           <label class="form-label" for="q3">3. Qual é o produto de 4 × 6?</label>
           <select class="form-select" id="q3" name="q3" required>
@@ -244,6 +228,7 @@
   <script>
     const form = document.getElementById('quizForm');
     const result = document.getElementById('result');
+
     const correctAnswers = {
       q1: '13',
       q2: '6',
@@ -257,4 +242,32 @@
       q10: '25'
     };
 
-    form.addEventListener('submit', funct
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const selected = form[key].value;
+        if (selected === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      result.classList.remove('d-none');
+      result.classList.remove('bg-danger', 'bg-success');
+
+      if (score === total) {
+        result.classList.add('bg-success', 'text-white');
+        result.innerText = `🎉 Parabéns! Você acertou todas as ${total} questões!`;
+      } else {
+        result.classList.add('bg-danger', 'text-white');
+        result.innerText = `Você acertou ${score} de ${total} questões. Tente novamente!`;
+      }
+
+      window.scrollTo({ top: result.offsetTop - 100, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
