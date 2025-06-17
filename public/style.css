@@ -134,3 +134,11 @@ footer {
     margin-bottom: 1rem;
   }
 }
+p {
+  margin-bottom: 1em;
+  line-height: 1.5;
+}
+
+section {
+  margin-bottom: 2em;
+}
